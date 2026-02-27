@@ -1,0 +1,352 @@
+:root {
+    --primary: #424747;
+    --secondary: #edeff7;
+    --dark: #151618;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--secondary);
+    color: var(--primary);
+    line-height: 1.7;
+}
+
+/* GLOBAL SECTION SPACING */
+section {
+    padding: 100px 5%;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #333636;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary);
+}
+
+.menu {
+    display: none;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    background: url("background ek.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* BUTTON */
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--secondary);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #cacccf;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #333636;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.about-image img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+/* ================= HIRING ================= */
+
+.hiring {
+    background: #1c2020;
+    text-align: center;
+    color: white;
+}
+
+.hiring ul {
+    margin-top: 30px;
+}
+
+.hiring li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: #333636;
+    text-align: center;
+    color: white;
+}
+
+.contact-number,
+.contact-email {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+.contact-email:hover {
+    color: #2961b6;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--primary);
+}
+
+/* ================= WHATSAPP FLOAT ================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ================= SUCCESS POPUP ================= */
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    transform: scale(0.7);
+    transition: 0.4s ease;
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup.active .popup-content {
+    transform: scale(1);
+}
+
+.checkmark {
+    font-size: 50px;
+    color: #25d366;
+    margin-bottom: 15px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: #444;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-primary {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
